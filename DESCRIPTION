@@ -1,7 +1,10 @@
 Package: vaalijako
 Title: Finnish Voting Area Tools
 Version: 0.0.0.9000
-Authors@R: person("haphut", email = "haphut@gmail.com", role = c("aut", "cre"))
+Authors@R: c(
+    person('haphut', email = 'haphut@gmail.com', role = c('aut', 'cre')),
+    person('Petri Kola', email = 'petri.kola@gmail.com', role = 'aut')
+    )
 Description: Transform the Finnish voting area point data into polygons.
 Depends:
     R (>= 3.1.2)
