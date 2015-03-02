@@ -9,6 +9,7 @@ Description: Transform the Finnish voting area point data into polygons.
 Depends:
     R (>= 3.1.2)
 Imports:
+    dplyr (>= 0.4.1),
     httr (>= 0.6.1)
 License: GPL
 LazyData: true
