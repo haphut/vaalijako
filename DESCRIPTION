@@ -10,6 +10,8 @@ Depends:
     R (>= 3.1.2)
 Imports:
     dplyr (>= 0.4.1),
-    httr (>= 0.6.1)
+    geometry (>= 0.3-5),
+    httr (>= 0.6.1),
+    proj4 (>= 1.0-8)
 License: GPL
 LazyData: true
