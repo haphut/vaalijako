@@ -25,6 +25,7 @@ transform_etrs_tm35fin_to_wgs84 <- function(df) {
 #' Run everything.
 #'
 #' @import dplyr
+#' @export
 main <- function() {
   voting_area_filename <- 'voting-areas.csv'
 

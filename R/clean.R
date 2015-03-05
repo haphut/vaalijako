@@ -1,9 +1,13 @@
 #' Find rows that have any values missing.
+#'
+#' @export
 find_missing_values <- function(df) {
   apply(df, 1, function(row) { any(is.na(row)) })
 }
 
 #' Find duplicated rows.
+#'
+#' @export
 find_duplicated_rows <- function(df) {
   duplicated(df)
 }
@@ -12,6 +16,7 @@ find_duplicated_rows <- function(df) {
 #' area.
 #'
 #' @import dplyr
+#' @export
 find_conflicting_coordinates <- function(df) {
   conflicting_df <- df %>%
     mutate(row_idx = seq_along(municipality)) %>%
@@ -24,6 +29,8 @@ find_conflicting_coordinates <- function(df) {
 }
 
 #' Find rows with duplicated coordinates.
+#'
+#' @export
 find_duplicated_coordinates <- function(df) {
   duplicated(df[, c('easting', 'northing'), drop = FALSE])
 }
@@ -37,6 +44,7 @@ separate_rows <- function(df, dirty_row_index) {
        clean_df = df[!dirty_row_index, , drop = FALSE])
 }
 
+#' @export
 log_and_clean <- function(df, filename, finder, ...) {
   separated_l <- separate_rows(df, finder(df, ...))
   dirty_df <- separated_l[['dirty_df']]
