@@ -1,3 +1,5 @@
+#' Parse the voting area CSV file into a data frame.
+#'
 #' @export
 parse_voting_area_csv <- function(filename) {
   df <- read.csv(filename, sep = ';', header = FALSE,

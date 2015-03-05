@@ -44,6 +44,12 @@ separate_rows <- function(df, dirty_row_index) {
        clean_df = df[!dirty_row_index, , drop = FALSE])
 }
 
+#' Log the dirty rows and return the clean rows.
+#'
+#' @param df The data frame to process.
+#' @param filename The filename to write the log into.
+#' @param finder The function that finds the dirty rows and returns a logical
+#'   vector.
 #' @export
 log_and_clean <- function(df, filename, finder, ...) {
   separated_l <- separate_rows(df, finder(df, ...))

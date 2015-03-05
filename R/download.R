@@ -1,3 +1,6 @@
+#' Download the voting area data file. On 2015-03-05 the data was not in
+#' standard CSV form.
+#'
 #' @import httr
 #' @export
 download_voting_area_csv <- function(filename,
