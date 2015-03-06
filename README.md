@@ -16,7 +16,7 @@ load_all()
 result <- main()
 ```
 
-## To install and run
+## Install and run
 
 Run in R:
 ```R
