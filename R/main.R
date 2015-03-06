@@ -35,15 +35,15 @@ main <- function() {
   df <- parse_voting_area_csv(voting_area_filename)
 
   clean_df <- df %>%
-    log_and_clean('missing_values.csv', find_missing_values) %>%
-    log_and_clean('duplicated_rows.csv', find_duplicated_rows) %>%
-    log_and_clean('conflicting_coordinates.csv', find_conflicting_coordinates) %>%
-    log_and_clean('duplicated_coordinates.csv', find_duplicated_coordinates)
+    log_and_clean('missing-values.csv', find_missing_values) %>%
+    log_and_clean('duplicated-rows.csv', find_duplicated_rows) %>%
+    log_and_clean('conflicting-coordinates.csv', find_conflicting_coordinates) %>%
+    log_and_clean('duplicated-coordinates.csv', find_duplicated_coordinates)
 
   central_df <- get_central_points(clean_df, median)
   central_delaunay <- calculate_delaunay(central_df)
   # FIXME: visualize
-  save(central_delaunay, file = 'central_delaunay.Rdata')
+  save(central_delaunay, file = 'central-delaunay.Rdata')
 
   delaunay <- calculate_delaunay(clean_df)
   save(central_delaunay, file = 'delaunay.Rdata')
