@@ -48,6 +48,6 @@ main <- function() {
   delaunay <- calculate_delaunay(clean_df)
   save(central_delaunay, file = 'delaunay.Rdata')
 
-  list(central_df = central_df, central_delaunay = central_delaunay,
-       delaunay = delaunay)
+  list(clean_df = clean_df, central_df = central_df,
+       central_delaunay = central_delaunay, delaunay = delaunay)
 }
