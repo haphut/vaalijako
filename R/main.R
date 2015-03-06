@@ -22,11 +22,11 @@ transform_etrs_tm35fin_to_wgs84 <- function(df) {
   # FIXME: Unfinished.
 }
 
-#' Run everything.
+#' Download, parse, clean and return the voting area data.
 #'
 #' @import dplyr
 #' @export
-main <- function() {
+load_and_clean <- function() {
   voting_area_filename <- 'voting-areas.csv'
 
   if (!file.exists(voting_area_filename)) {
@@ -39,6 +39,13 @@ main <- function() {
     log_and_clean('duplicated-rows.csv', find_duplicated_rows) %>%
     log_and_clean('conflicting-coordinates.csv', find_conflicting_coordinates) %>%
     log_and_clean('duplicated-coordinates.csv', find_duplicated_coordinates)
+}
+
+#' Run everything.
+#'
+#' @export
+main <- function() {
+  clean_df <- load_and_clean()
 
   central_df <- get_central_points(clean_df, median)
   central_delaunay <- calculate_delaunay(central_df)
