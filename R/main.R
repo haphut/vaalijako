@@ -8,7 +8,7 @@ calculate_delaunay <- function(df) {
 #' Get a central point for each voting area in each municipality.
 #'
 #' @import dplyr
-get_central_points = function(df, func = median) {
+get_central_points <- function(df, func = median) {
   df %>%
     group_by(municipality, voting_area) %>%
     summarise(northing = func(northing),
